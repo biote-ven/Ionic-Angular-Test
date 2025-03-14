@@ -13,8 +13,9 @@ import { TutorsPage } from './tutors.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    TutorsPageRoutingModule
+    TutorsPageRoutingModule,
+    TutorsPage
   ],
-  declarations: [TutorsPage]
+  declarations: []
 })
 export class TutorsPageModule {}

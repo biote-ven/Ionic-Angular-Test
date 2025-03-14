@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { TutorsPage } from './pages/tutors/tutors.page';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'tutors',
-    loadChildren: () => import('./pages/tutors/tutors.module').then( m => m.TutorsPageModule)
+    component: TutorsPage,
+    //loadChildren: () => import('./pages/tutors/tutors.module').then( m => m.TutorsPageModule)
   },
   {
     path: 'classes',

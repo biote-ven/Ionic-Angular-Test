@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>classes</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Reservaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,27 @@
       <ion-title size="large">classes</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+  <ion-searchbar
+    [(ngModel)]="filterValue"
+    (ionInput)="applyFilter()"
+    placeholder="Filtrar por Especialidad..."
+  ></ion-searchbar>
+  
+  
+  <ion-card *ngFor="let booking of filteredBookings$ | async">
+    <ion-card-header>
+      <ion-card-title>Cliente: {{ booking.user.last_name }} - {{ booking.user.first_name }}</ion-card-title>
+      <ion-card-subtitle>ID Reserva: {{ booking.service_id }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Fecha: {{ booking.date }}
+      <br>
+      Hora Inicio: {{ booking.start_time }} - Hora Fin: {{ booking.end_time }}
+      <br>
+      Teléfono Cliente: {{ booking.user.phone }}     
+      <br>
+      Email Cliente: {{ booking.user.email }}   
+    </ion-card-content>
+  </ion-card>  
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>tutors</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Tutores</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,35 @@
       <ion-title size="large">tutors</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+
+  <!-- Spinner de carga -->
+  <div *ngIf="isLoading" class="ion-text-center">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando tutores...</p>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <ion-searchbar
+    [(ngModel)]="filterValue"
+    (ionInput)="applyFilter()"
+    placeholder="Filtrar por Especialidad..."
+  ></ion-searchbar>
+
+  <!-- Listado de tutores -->
+  <ion-list>
+    <ion-item *ngFor="let tutor of filteredTutors$ | async">
+      Tutor: {{ tutor.last_name }}, ({{ tutor.first_name }}) / Especialidad: {{ tutor.speciality }}
+    </ion-item>
+  </ion-list>  
+
+  <!-- Mensaje de error con ion-toast -->
+  <ion-toast
+    [isOpen]="showError"
+    message="Error al cargar los tutores. Inténtalo de nuevo."
+    duration="3000"
+    (didDismiss)="showError = false"
+  ></ion-toast>
+
+
 </ion-content>

@@ -1,6 +1,6 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+<ion-header [translucent]="true" >
+  <ion-toolbar color="primary">
+    <ion-title>HOME - SISTEMA DE RESERVA</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,39 @@
       <ion-title size="large">home</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card color="success">
+    <img alt="Silhouette of mountains" src="../../../assets/images/tutores.png" />
+    <ion-card-header>
+      <ion-card-title>Tutores</ion-card-title>
+      <ion-card-subtitle>Información sobre tutores</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí podrá ver el listado de Tutores del Sistema.
+    </ion-card-content>
+    <ion-button fill="clear" (click)="goTutors()">Ver Tutores</ion-button>
+  </ion-card>
+  <br>
+  <ion-card color="warning">
+    <img alt="Silhouette of mountains" src="../../../assets/images/estudiantes.png" />
+    <ion-card-header>
+      <ion-card-title>Usuarios</ion-card-title>
+      <ion-card-subtitle>Información sobre Usuarios</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí podrá ver el listado de Usuarios del Sistema.
+    </ion-card-content>
+    <ion-button fill="clear" (click)="goUsers()">Ver Usuarios</ion-button>
+  </ion-card>
+  <br>
+  <ion-card color="light">
+    <img alt="Silhouette of mountains" src="../../../assets/images/reservas.png" />
+    <ion-card-header>
+      <ion-card-title>Reservas</ion-card-title>
+      <ion-card-subtitle>Información sobre Reservas</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí podrá ver el listado de Reservaciones ya realizadas en el Sistema.
+    </ion-card-content>
+    <ion-button fill="clear" (click)="goReservations()">Ver Reservas</ion-button>
+  </ion-card>  
 </ion-content>

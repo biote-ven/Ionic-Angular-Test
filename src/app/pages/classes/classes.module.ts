@@ -13,8 +13,9 @@ import { ClassesPage } from './classes.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ClassesPageRoutingModule
+    ClassesPageRoutingModule,
+    ClassesPage
   ],
-  declarations: [ClassesPage]
+  declarations: []
 })
 export class ClassesPageModule {}

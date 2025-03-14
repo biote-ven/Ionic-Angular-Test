@@ -1,13 +1,46 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>student</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Estudiantes</ion-title>
   </ion-toolbar>
 </ion-header>
+  
 
+<!-- Spinner de carga -->
+<div *ngIf="isLoading" class="ion-text-center">
+  <ion-spinner name="crescent"></ion-spinner>
+  <p>Cargando estudiantes...</p>
+</div>
+
+<!-- Listado de estudiantes -->
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">student</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-accordion-group expand="inset">
+    <ion-accordion *ngFor="let itemUser of users$ | async" value="{{ itemUser.id }}">
+      <ion-item slot="header" color="light">
+        <ion-label>Apellido: {{ itemUser.last_name }}, Nombre: ({{ itemUser.first_name }})</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Email: {{ itemUser.email }}
+        <br><br><br>
+        Phone: {{ itemUser.phone }}
+        <br><br><br>
+        <ion-button size="small" (click)="editStudent(itemUser)">
+          <ion-icon slot="start" name="pencil"></ion-icon>
+          editar
+        </ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <!-- Mensaje de error con ion-toast -->
+  <ion-toast
+    [isOpen]="showError"
+    message="Error al cargar los tutores. Inténtalo de nuevo."
+    duration="3000"
+    (didDismiss)="showError = false"
+  ></ion-toast>
 </ion-content>
