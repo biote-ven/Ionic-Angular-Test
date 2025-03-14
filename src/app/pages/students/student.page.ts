@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular'; // Import IonicModule
+import { IonicModule } from '@ionic/angular'; 
 import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api.service';
 import { IUser } from 'src/app/models';

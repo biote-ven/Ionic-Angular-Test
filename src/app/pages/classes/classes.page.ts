@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { IonicModule } from '@ionic/angular'; // Import IonicModule
+import { IonicModule } from '@ionic/angular'; 
 import { BehaviorSubject, combineLatest, map, Observable, startWith } from 'rxjs';
 import { IBooking } from 'src/app/models';
 import { ApiService } from 'src/app/services/api.service';

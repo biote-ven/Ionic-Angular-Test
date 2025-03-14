@@ -25,11 +25,10 @@ export class DetailStudentsComponent  implements OnInit {
   constructor(private toastController: ToastController) { }
 
   ngOnInit() {
-    // Recuperar el objeto desde localStorage
     const studentToEdit = localStorage.getItem('studentToEdit');
 
     if (studentToEdit) {
-      const student = JSON.parse(studentToEdit); // Convertir de string a objeto
+      const student = JSON.parse(studentToEdit); 
       this.form.patchValue(student); // Rellenar el formulario con los datos del estudiante
       localStorage.removeItem('studentToEdit');
     }
@@ -38,8 +37,6 @@ export class DetailStudentsComponent  implements OnInit {
 
   async submit() {
     if (this.form.valid) {
-      // Aquí puedes hacer algo con los datos del formulario, como enviarlos a un servidor
-      console.log(this.form.value);
 
       // Muestra el mensaje toast
       const toast = await this.toastController.create({
